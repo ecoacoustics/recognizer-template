@@ -24,7 +24,8 @@ number of suitable licenses available. See [choosing a license](https://chooseal
 
 Other good choices are:
 
-- the [Creative Commons Attribution-ShareAlike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) license
+- the [Creative Commons Attribution-ShareAlike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) license 
+  - This is a better choice for your data rather than your code. Different licenses are good for different things. The [choosing a license](https://choosealicense.com/) link can help you choose.
 - and the [Academic Free License 3.0](https://choosealicense.com/licenses/afl-3.0/)
 
 ### Q: What is this CITATION.cff file?
