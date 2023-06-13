@@ -12,7 +12,7 @@ get your own copy, owned by you, that you can change.
 ### Q: I'm not ready to publish my recognizer
 
 After forking this repository you can make your copy private. See
-[setting repository visibility](https://help.github.com/articles/publicizing-or-hiding-a-repository/).
+[setting repository visibility](https://help.github.com/articles/publicizing-or-hiding-a-repository/](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
 
 ### Q: What rights do I have after I publish my recognizer?
 
