@@ -5,7 +5,9 @@ A template repository for publishing an ecoacoustics or bioacoustics recognizer
 This template is an attempt to set up a standard layout for publishing recognizers.
 
 You should fork (make a copy) of this repository. When it is forked, you'll
-get your own copy, owned by you, that you can change.
+get your own copy, owned by you, that you can change. 
+
+You can also start a new repository using this template by clicking the button that says _Use this template_ and then selecting _Create a new repository_.
 
 ## Getting started
 
