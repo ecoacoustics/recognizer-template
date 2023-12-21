@@ -65,7 +65,7 @@ tab and ask us a question!
 ├── CITATION.cff    - citation information for this repository
 ├── src             - [optional] if you want to publish code with your recognizer,
 │                     put it in this folder
-├── artefacts       - [optional] if you have a trained model or other artifacts
+├── artifacts       - [optional] if you have a trained model or other artifacts
 │                     produced while developing your recognizer, put them in this folder
 ├── data            - contains or describes your data set
 │   ├── training
@@ -96,7 +96,7 @@ For larger datasets you can use:
     - like Ecosounds, the A2O, or ...others...
 - A bioacoustics repository
     - like Xeno Canto
-- Cloud storage options like DropBox, CloudStor, OneDrive, etc.
-- Commersial services like Amazon S3, Google Cloud Storage, etc.
+- Cloud storage options like DropBox, OneDrive, etc.
+- Commercial services like Amazon S3, Google Cloud Storage, etc.
 
 Egret, included in this template, can download samples from the internet for you.
