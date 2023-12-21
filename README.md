@@ -5,14 +5,16 @@ A template repository for publishing an ecoacoustics or bioacoustics recognizer
 This template is an attempt to set up a standard layout for publishing recognizers.
 
 You should fork (make a copy) of this repository. When it is forked, you'll
-get your own copy, owned by you, that you can change.
+get your own copy, owned by you, that you can change. 
+
+You can also start a new repository using this template by clicking the button that says _Use this template_ and then selecting _Create a new repository_.
 
 ## Getting started
 
 ### Q: I'm not ready to publish my recognizer
 
 After forking this repository you can make your copy private. See
-[setting repository visibility](https://help.github.com/articles/publicizing-or-hiding-a-repository/).
+[setting repository visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
 
 ### Q: What rights do I have after I publish my recognizer?
 
@@ -24,7 +26,8 @@ number of suitable licenses available. See [choosing a license](https://chooseal
 
 Other good choices are:
 
-- the [Creative Commons Attribution-ShareAlike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) license
+- the [Creative Commons Attribution-ShareAlike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) license 
+  - This is a better choice for your data rather than your code. Different licenses are good for different things. The [choosing a license](https://choosealicense.com/) link can help you choose.
 - and the [Academic Free License 3.0](https://choosealicense.com/licenses/afl-3.0/)
 
 ### Q: What is this CITATION.cff file?
@@ -76,7 +79,20 @@ tab and ask us a question!
 │   │   ├── xxx     - the name of the species or target you are evaluating your recognizer against
 │   │   ├── yyy     - [optional] further folders containing testing samples
 │   │   └── zzz     
+|   └── README.md   - information on the included datasets or on how to obtain them
 ```
+
+# The `data` folder
+
+Storing data in a repository is not always the right choice. See the [_Tips for audio data_](#tips-for-audio-data) section below.
+
+In each folder where it is relevant you should include:
+
+1. Small sets of audio samples 
+2. A README.md containing
+  - provenance of any data included
+  - instructions on how to obatain more data
+3. Any scripts needed to download data from remote repositories
 
 ## Tips for audio data
 
