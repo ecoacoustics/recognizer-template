@@ -91,7 +91,7 @@ In each folder where it is relevant you should include:
 1. Small sets of audio samples 
 2. A README.md containing
   - provenance of any data included
-  - instructions on how to obatain more data
+  - instructions on how to obtain more data
 3. Any scripts needed to download data from remote repositories
 
 ## Tips for audio data
