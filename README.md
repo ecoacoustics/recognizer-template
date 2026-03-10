@@ -1,15 +1,107 @@
 # recognizer-template
 
-A template repository for publishing an ecoacoustics or bioacoustics recognizer
+A template repository for publishing an ecoacoustics or bioacoustics recognizer.
 
 This template is an attempt to set up a standard layout for publishing recognizers.
 
+## Contents
+
+- [Getting started](#getting-started)
+- [Layout](#layout)
+- [FAQ](#faq)
+- [Tips for audio data](#tips-for-audio-data)
+
+## Getting started
+
 You should fork (make a copy) of this repository. When it is forked, you'll
-get your own copy, owned by you, that you can change. 
+get your own copy, owned by you, that you can change.
+
+In GitHub, you can use the _Use this template_ button to create your own repository based on this template. See [creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) for more information.
+
+![Use this template button](https://docs.github.com/assets/cb-76823/mw-1440/images/help/repository/use-this-template-button.webp)
 
 You can also start a new repository using this template by clicking the button that says _Use this template_ and then selecting _Create a new repository_.
 
-## Getting started
+## Layout
+
+```
+.
+├── LICENSE                                - the license for this recogniser
+├── README.md                              - this file. Change this to describe your recogniser and how to use it.
+├── CITATION.cff                           - citation information for this repository (repository-level)
+├── src                                    - source code for this recogniser including code, container specifications, and tests
+└── recognisers                            - contains all recognisers in this repository
+    └── <name>                             - recogniser name (species, group, or general name). Can have multiple recognisers in a single repository.
+        ├── README.md                      - [optional] list of targeted species/call types
+        │                                    and version history with performance metrics
+        ├── CITATION.cff                   - [optional] if attribution varies per recogniser
+        ├── src                            - [optional] code for this recogniser version
+        └── <version>                      - version number (e.g., v1, v2, v3)
+            ├── artifacts
+            │   └── <artifact>             - the "recogniser". Could be a model, a tflite file, or a JSON file.
+            ├── data
+            │   ├── training               - training data references and/or audio files
+            │   │   ├── data.json          - JSON format training data (see example below)
+            │   │   ├── data.csv           - [or] CSV format training data
+            │   │   └── [audio files]      - [or] direct audio files
+            │   └── test
+            │       └── ...                 - test data in the same format as training data
+```
+
+### The `recognisers` folder
+
+Each recognizer is organized in its own directory with versioned subdirectories. This allows multiple recognizers to be published in a single repository and enables clear version tracking.
+
+### Recognizer directories
+
+Each recogniser directory should  contain:
+
+- **README.md**: A description of the recogniser, targeted species/call types, and version history with performance metrics
+  - **Targeted species / call types**: A clear list of what the recognizer detects
+  - **Version history**: For each version, document:
+    - Significant changes between versions (e.g., new data sources, methodology changes)
+    - Performance metrics (precision, recall, F1 score, etc.)
+    - Date of release
+    - Any breaking changes
+- **src/**: [Optional] Code specific to this recognizer version
+- **CITATION.cff**: [Optional] If attribution differs from the repository-level citation
+- **Version directories**: Each version of the recognizer should be stored in its own subdirectory (e.g., v1, v2, etc.) to maintain a clear history of changes and performance over time.
+
+### Version Directories
+
+Versions should increment when:
+
+- After you have published a recogniser or results
+  - You should maintain old major versions for reproducibility
+- AND
+  - Adding new training or test data
+  - Changing methodology or model architecture
+  - Making significant improvements
+- While you are developing your recogniser you should just update the same version (e.g., v1) until you are ready to publish.
+- Version numbers can take whatever format you like, but
+  - we recommend a simple monotonic increasing format like v1, v2, v3, etc.
+  - Or semantic versioning (e.g., v1.0.0, v1.1.0, etc.) if you prefer.
+
+Each version directory contains:
+
+- **artifacts/**: Contains the "recogniser" artifact, which could be a model file, a tflite file, a JSON file, or any other format that represents the recognizer.
+- **data/training/**: Training data as JSON references, CSV, or audio files
+  - Format example for `data.json`:
+    
+    ```json
+    [
+      {
+        "source": "https://ecosounds.org/audio_recordings/123/original",
+        "offsets": [
+          {"start": 1.0, "end": 6.0, "label": "call_type", "species": "Species name"}
+        ]
+      }
+    ]
+    ```
+
+- **data/test/**: Test data in the same format as training data
+
+## FAQ
 
 ### Q: I'm not ready to publish my recognizer
 
@@ -19,6 +111,8 @@ After forking this repository you can make your copy private. See
 ### Q: What rights do I have after I publish my recognizer?
 
 That's up to you. If make your repository private, only you have access.
+
+## Q: What license should I use?
 
 When it is time to publish you recognizer, you'll need to choose an appropriate
 license. This repository by default uses the Apache 2.0 license but there are a
@@ -58,41 +152,6 @@ or by suggestion improvements.
 
 Head on over to the [discussions](https://github.com/ecoacoustics/recognizer-template/discussions)
 tab and ask us a question!
-
-## Directory structure
-
-```
-.
-├── LICENSE.md      - the license for this recognizer
-├── README.md       - the first page people see when they visit the repository
-├── CITATION.cff    - citation information for this repository
-├── src             - [optional] if you want to publish code with your recognizer,
-│                     put it in this folder
-├── artifacts       - [optional] if you have a trained model or other artifacts
-│                     produced while developing your recognizer, put them in this folder
-├── data            - contains or describes your data set
-│   ├── training
-│   │   ├── xxx     - the name of the species or target you are training on
-│   │   ├── yyy     - [optional] further folders containing training samples
-│   │   └── zzz     
-│   ├── test
-│   │   ├── xxx     - the name of the species or target you are evaluating your recognizer against
-│   │   ├── yyy     - [optional] further folders containing testing samples
-│   │   └── zzz     
-|   └── README.md   - information on the included datasets or on how to obtain them
-```
-
-# The `data` folder
-
-Storing data in a repository is not always the right choice. See the [_Tips for audio data_](#tips-for-audio-data) section below.
-
-In each folder where it is relevant you should include:
-
-1. Small sets of audio samples 
-2. A README.md containing
-  - provenance of any data included
-  - instructions on how to obtain more data
-3. Any scripts needed to download data from remote repositories
 
 ## Tips for audio data
 
