@@ -1,0 +1,30 @@
+[
+  {
+    "source": "https://ecosounds.org/audio_recordings/123/original",
+    "offsets": [
+      {
+        "start": 1.0,
+        "end": 6.0,
+        "label": "call type 1",
+        "species": "Species 1"
+      },
+      {
+        "start": 15.5,
+        "end": 18.2,
+        "label": "call type 2",
+        "species": "Species 1"
+      }
+    ]
+  },
+  {
+    "source": "https://ecosounds.org/audio_recordings/456/original",
+    "offsets": [
+      {
+        "start": 3.2,
+        "end": 7.8,
+        "label": "call type 1",
+        "species": "Species 2"
+      }
+    ]
+  }
+]

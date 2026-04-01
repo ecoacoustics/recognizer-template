@@ -1,0 +1,47 @@
+{
+  "name": "example-recogniser",
+  "version": "v1",
+  "description": "Description of the recogniser and what it detects",
+  "targetSpecies": [
+    "Species 1",
+    "Species 2"
+  ],
+  "callTypes": [
+    "call type 1",
+    "call type 2"
+  ],
+  "model": {
+    "type": "model type (e.g., CNN, Random Forest)",
+    "framework": "framework used (e.g., TensorFlow, PyTorch, scikit-learn)",
+    "modelFile": "path/to/model/file"
+  },
+  "performance": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1Score": 0.0,
+    "testDataset": "description or path to test dataset"
+  },
+  "training": {
+    "datasetSize": 0,
+    "dataSources": [
+      "source 1",
+      "source 2"
+    ],
+    "trainingDate": "YYYY-MM-DD"
+  },
+  "usage": {
+    "inputFormat": "audio format (e.g., WAV, FLAC)",
+    "sampleRate": 22050,
+    "parameters": {
+      "parameter1": "value",
+      "parameter2": "value"
+    }
+  },
+  "metadata": {
+    "author": "Author Name",
+    "contact": "email@example.com",
+    "license": "License type",
+    "created": "YYYY-MM-DD",
+    "updated": "YYYY-MM-DD"
+  }
+}
