@@ -36,7 +36,7 @@ You can also start a new repository using this template by clicking the button t
         ├── README.md                      - [optional] list of targeted species/call types
         │                                    and version history with performance metrics
         ├── CITATION.cff                   - [optional] if attribution varies per recogniser
-        ├── src                            - [optional] code for this recogniser version
+        ├── src                            - [optional] code specific to this recogniser
         └── <version>                      - version number (e.g., v1, v2, v3)
             ├── artifacts
             │   └── <artifact>             - the "recogniser". Could be a model, a tflite file, or a JSON file.
@@ -47,6 +47,7 @@ You can also start a new repository using this template by clicking the button t
             │   │   └── [audio files]      - [or] direct audio files
             │   └── test
             │       └── ...                 - test data in the same format as training data
+            ├── src                            - [optional] code specific to this recogniser version
 ```
 
 ### The `recognisers` folder
@@ -64,7 +65,7 @@ Each recogniser directory should  contain:
     - Performance metrics (precision, recall, F1 score, etc.)
     - Date of release
     - Any breaking changes
-- **src/**: [Optional] Code specific to this recognizer version
+- **src/**: [Optional] Code specific to this recognizer
 - **CITATION.cff**: [Optional] If attribution differs from the repository-level citation
 - **Version directories**: Each version of the recognizer should be stored in its own subdirectory (e.g., v1, v2, etc.) to maintain a clear history of changes and performance over time.
 
@@ -88,7 +89,7 @@ Each version directory contains:
 - **artifacts/**: Contains the "recogniser" artifact, which could be a model file, a tflite file, a JSON file, or any other format that represents the recognizer.
 - **data/training/**: Training data as JSON references, CSV, or audio files
   - Format example for `data.json`:
-    
+
     ```json
     [
       {
@@ -101,6 +102,7 @@ Each version directory contains:
     ```
 
 - **data/test/**: Test data in the same format as training data
+- **src/**: [Optional] Code specific to this recognizer version
 
 ## FAQ
 
