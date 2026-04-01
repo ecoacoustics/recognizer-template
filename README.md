@@ -9,6 +9,7 @@ This template is an attempt to set up a standard layout for publishing recognize
 - [Getting started](#getting-started)
 - [Layout](#layout)
 - [FAQ](#faq)
+- [Minting a DOI with Zenodo](#minting-a-doi-with-zenodo)
 - [Tips for audio data](#tips-for-audio-data)
 
 ## Getting started
@@ -112,7 +113,7 @@ After forking this repository you can make your copy private. See
 
 That's up to you. If make your repository private, only you have access.
 
-## Q: What license should I use?
+### Q: What license should I use?
 
 When it is time to publish you recognizer, you'll need to choose an appropriate
 license. This repository by default uses the Apache 2.0 license but there are a
@@ -152,6 +153,46 @@ or by suggestion improvements.
 
 Head on over to the [discussions](https://github.com/ecoacoustics/recognizer-template/discussions)
 tab and ask us a question!
+
+## Minting a DOI with Zenodo
+
+A DOI (Digital Object Identifier) gives your recognizer a permanent, citable
+reference. [Zenodo](https://zenodo.org/) is a free, open repository hosted by
+CERN that integrates directly with GitHub to automatically archive your
+repository and assign a DOI.
+
+### Steps to mint a DOI
+
+1. **Create a Zenodo account**: Go to [zenodo.org](https://zenodo.org/) and sign
+   in with your GitHub account.
+2. **Link your repository**: In Zenodo, go to your
+   [GitHub settings](https://zenodo.org/account/settings/github/) and toggle the
+   switch to enable your recognizer repository.
+3. **Create a release**: Back in GitHub, [create a new release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+   for your repository (e.g., `v1.0.0`). Zenodo will automatically archive
+   the release and mint a DOI.
+4. **Get your DOI badge**: After the release is archived, visit your Zenodo
+   record page to find the DOI and a badge you can add to your README.
+5. **Update your CITATION.cff**: Add the DOI to your `CITATION.cff` file so
+   that citations point to the permanent DOI. For example:
+
+   ```yaml
+   identifiers:
+     - type: doi
+       value: "10.5281/zenodo.XXXXXXX"
+       description: "Zenodo archive of this recognizer"
+   ```
+
+### Tips
+
+- Zenodo creates a **concept DOI** that always resolves to the latest version,
+  as well as **version-specific DOIs** for each release. Use the concept DOI in
+  your README badge and the version-specific DOI when citing a particular
+  release.
+- Make sure your repository has a license before creating a release—Zenodo will
+  include it in the archived metadata.
+- You can edit the metadata (title, authors, description) on Zenodo after the
+  archive is created.
 
 ## Tips for audio data
 
